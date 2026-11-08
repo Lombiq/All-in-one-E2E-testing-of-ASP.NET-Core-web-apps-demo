@@ -6,13 +6,11 @@
 
   <ItemGroup>
     <None Remove=".htmlvalidate.json" />
-    <None Remove="Tests\CustomZapAutomationFrameworkPlan.yml" />
     <None Remove="xunit.runner.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include=".htmlvalidate.json" CopyToOutputDirectory="PreserveNewest" />
-    <Content Include="Tests\CustomZapAutomationFrameworkPlan.yml" CopyToOutputDirectory="PreserveNewest" />
     <Content Include="xunit.runner.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
