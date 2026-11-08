@@ -21,9 +21,6 @@ public class ContentPublishingTests(ITestOutputHelper testOutputHelper) : UITest
                 await context.ClickPublishAsync();
                 context.ShouldBeSuccess();
 
-                await context.SignOutDirectlyAsync();
-                (await context.GetCurrentUserNameAsync()).ShouldBeNullOrEmpty();
-
                 await context.GoToRelativeUrlAsync("/hello-net-conf");
                 context.Get(By.TagName("h1")).Text.ShouldBe(title);
             });

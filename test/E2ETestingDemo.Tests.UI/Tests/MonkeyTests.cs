@@ -12,7 +12,7 @@ public class MonkeyTests(ITestOutputHelper testOutputHelper) : UITestBase(testOu
             {
                 await context.GoToRelativeUrlAsync("/Login");
 
-                var monkeyTestingOptions = new MonkeyTestingOptions { PageTestTime = TimeSpan.FromSeconds(5) };
+                var monkeyTestingOptions = new MonkeyTestingOptions { PageTestTime = TimeSpan.FromSeconds(10) };
                 await context.TestCurrentPageAsMonkeyAsync(monkeyTestingOptions);
             });
 }

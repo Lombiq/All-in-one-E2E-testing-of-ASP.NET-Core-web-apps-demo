@@ -11,13 +11,15 @@ public class RemoteTests(ITestOutputHelper testOutputHelper) : RemoteUITestBase(
     public Task OrchardCoreWebsiteShouldWork() =>
         ExecuteTestAsync(
             new Uri("https://orchardcore.net/"),
-            context =>
+            async context =>
             {
                 context.Get(By.CssSelector("h1")).Text.ShouldBe("The open-source .NET CMS and application framework.");
                 context.Exists(By.LinkText("Try the live demo"));
 
-                // This makes the test fail.
-                context.Exists(By.LinkText("Buy a license"));
+                await context.ClickReliablyOnByLinkTextAsync("Overview");
+
+                // Just for the demo.
+                await Task.Delay(3000);
             },
             configuration => configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
 }

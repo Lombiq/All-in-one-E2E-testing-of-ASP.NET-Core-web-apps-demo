@@ -32,7 +32,7 @@ public abstract class UITestBase(ITestOutputHelper testOutputHelper) : OrchardCo
                 // Slowing down visible browser runs so the audience can follow the steps.
                 if (!configuration.BrowserConfiguration.Headless)
                 {
-                    var stepDelay = TimeSpan.FromSeconds(1);
+                    var stepDelay = TimeSpan.FromSeconds(3);
                     configuration.Events.AfterNavigation += (_, _) => Task.Delay(stepDelay);
                     configuration.Events.BeforeClick += (_, _) => Task.Delay(stepDelay);
                 }
