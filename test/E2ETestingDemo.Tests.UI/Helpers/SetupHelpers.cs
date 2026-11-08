@@ -1,4 +1,3 @@
-using Atata;
 using Lombiq.Tests.UI.Extensions;
 using Lombiq.Tests.UI.Models;
 using Lombiq.Tests.UI.Services;
@@ -18,29 +17,10 @@ public static class SetupHelpers
             {
                 SiteName = SiteName,
                 RecipeId = RecipeId,
-                TablePrefix = "E2E",
-                SiteTimeZoneValue = "Europe/Budapest",
             });
 
-        AssertSetupSuccessful(context);
+        context.Exists(By.Id("mainNav"));
 
         return homepageUri;
-    }
-
-    private static void AssertSetupSuccessful(UITestContext context)
-    {
-        try
-        {
-            context.Exists(By.Id("mainNav"));
-        }
-        catch (NoSuchElementException exception)
-        {
-            var validationErrors = context.GetAll(By.ClassName("field-validation-error"));
-
-            if (validationErrors.Count == 0) throw;
-
-            var errors = "\n- " + validationErrors.Select(element => element.Text.Trim()).Join("\n- ");
-            throw new AssertionException($"Setup has failed with the following validation errors:{errors}", exception);
-        }
     }
 }
