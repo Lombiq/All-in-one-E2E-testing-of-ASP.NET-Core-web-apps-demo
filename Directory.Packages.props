@@ -15,8 +15,6 @@
     <PackageVersion Include="Microsoft.Testing.Extensions.HangDump" Version="2.5.2" />
     <PackageVersion Include="Microsoft.Testing.Extensions.TrxReport" Version="2.5.2" />
     <PackageVersion Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
-    <PackageVersion Include="OrchardCore.ContentManagement" Version="$(OrchardCoreVersion)" />
-    <PackageVersion Include="OrchardCore.Module.Targets" Version="$(OrchardCoreVersion)" />
     <PackageVersion Include="xunit.v3" Version="4.0.2" />
   </ItemGroup>
 </Project>

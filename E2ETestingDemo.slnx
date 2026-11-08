@@ -12,9 +12,6 @@
   <Folder Name="/src/">
     <Project Path="src/E2ETestingDemo.Web/E2ETestingDemo.Web.csproj" />
   </Folder>
-  <Folder Name="/src/Modules/">
-    <Project Path="src/Modules/E2ETestingDemo.TestingModule/E2ETestingDemo.TestingModule.csproj" />
-  </Folder>
   <Folder Name="/test/">
     <Project Path="test/E2ETestingDemo.Tests.UI/E2ETestingDemo.Tests.UI.csproj" />
   </Folder>

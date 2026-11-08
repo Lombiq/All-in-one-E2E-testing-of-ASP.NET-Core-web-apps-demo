@@ -25,7 +25,6 @@
     {
       "name": "feature",
       "enable": [
-        "E2ETestingDemo.TestingModule",
         "OrchardCore.Localization"
       ]
     },
