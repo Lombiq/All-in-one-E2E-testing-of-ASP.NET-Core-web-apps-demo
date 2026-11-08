@@ -1,0 +1,20 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path="License.md" />
+    <File Path="NuGet.config" />
+    <File Path="Readme.md" />
+    <File Path="Reset-Local.ps1" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/E2ETestingDemo.Web/E2ETestingDemo.Web.csproj" />
+  </Folder>
+  <Folder Name="/src/Modules/">
+    <Project Path="src/Modules/E2ETestingDemo.TestingModule/E2ETestingDemo.TestingModule.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/E2ETestingDemo.Tests.UI/E2ETestingDemo.Tests.UI.csproj" />
+  </Folder>
+</Solution>

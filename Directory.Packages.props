@@ -1,0 +1,21 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+    <OrchardCoreVersion>3.0.1</OrchardCoreVersion>
+    <LombiqTestsUIVersion>16.0.0</LombiqTestsUIVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="Lombiq.HelpfulLibraries.OrchardCore" Version="13.1.0" />
+    <PackageVersion Include="Lombiq.Tests" Version="6.0.1" />
+    <PackageVersion Include="Lombiq.Tests.UI" Version="$(LombiqTestsUIVersion)" />
+    <PackageVersion Include="Lombiq.Tests.UI.Shortcuts" Version="$(LombiqTestsUIVersion)" />
+    <PackageVersion Include="Microsoft.Testing.Extensions.GitHubActionsReport" Version="2.5.2" />
+    <PackageVersion Include="Microsoft.Testing.Extensions.HangDump" Version="2.5.2" />
+    <PackageVersion Include="Microsoft.Testing.Extensions.TrxReport" Version="2.5.2" />
+    <PackageVersion Include="OrchardCore.Application.Cms.Targets" Version="$(OrchardCoreVersion)" />
+    <PackageVersion Include="OrchardCore.ContentManagement" Version="$(OrchardCoreVersion)" />
+    <PackageVersion Include="OrchardCore.Module.Targets" Version="$(OrchardCoreVersion)" />
+    <PackageVersion Include="xunit.v3" Version="4.0.2" />
+  </ItemGroup>
+</Project>

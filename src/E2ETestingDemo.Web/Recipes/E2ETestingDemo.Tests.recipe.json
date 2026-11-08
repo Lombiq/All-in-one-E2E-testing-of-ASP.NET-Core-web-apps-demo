@@ -1,0 +1,46 @@
+{
+  "name": "E2ETestingDemo.Tests",
+  "displayName": "TEST: E2E Testing Demo",
+  "description": "Setup recipe for automated UI test execution.",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/All-in-one-E2E-testing-of-ASP.NET-Core-web-apps-demo",
+  "version": "1.0",
+  "issetuprecipe": true,
+  "categories": [
+    "test"
+  ],
+  "tags": [
+    "test"
+  ],
+  "steps": [
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "E2ETestingDemo.Web",
+          "name": "Blog"
+        }
+      ]
+    },
+    {
+      "name": "feature",
+      "enable": [
+        "E2ETestingDemo.TestingModule",
+        "OrchardCore.Localization"
+      ]
+    },
+    {
+      "name": "settings",
+      "UseCdn": false,
+      "SmtpSettings": {
+        "DefaultSender": "sender@example.com"
+      },
+      "LocalizationSettings": {
+        "DefaultCulture": "en-US",
+        "SupportedCultures": [
+          "en-US"
+        ]
+      }
+    }
+  ]
+}

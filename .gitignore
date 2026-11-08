@@ -12,6 +12,8 @@ wwwroot/
 node_modules/
 *.user
 .pnpm-debug.log
+App_Data/
+src/*.Web/Localization/
 
 # Mac
 .DS_Store
