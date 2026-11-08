@@ -1,5 +1,6 @@
 using E2ETestingDemo.Tests.UI.Helpers;
 using Lombiq.Tests.UI;
+using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Services;
 
 namespace E2ETestingDemo.Tests.UI;
@@ -23,6 +24,8 @@ public abstract class UITestBase(ITestOutputHelper testOutputHelper) : OrchardCo
             setupOperation,
             async configuration =>
             {
+                configuration.BrowserConfiguration.DefaultBrowserSize = CommonDisplayResolutions.HdPlus;
+
                 configuration.BrowserConfiguration.Headless =
                     TestConfigurationManager.GetBoolConfiguration("BrowserConfiguration:Headless", defaultValue: false);
 

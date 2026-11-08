@@ -11,18 +11,17 @@ public class AccessibilityTests(ITestOutputHelper testOutputHelper) : UITestBase
             async context =>
             {
                 await context.GoToRelativeUrlAsync("/categories/travel");
-
-                // This makes the test fail.
-                context.ExecuteScript("document.documentElement.removeAttribute('lang');");
-
-                context.AssertAccessibility();
             },
             configuration =>
             {
                 configuration.AccessibilityCheckingConfiguration.RunAccessibilityCheckingAssertionOnAllPageChanges = true;
 
+                // This makes the test fail.
                 configuration.AccessibilityCheckingConfiguration.AxeBuilderConfigurator += axeBuilder =>
-                    AccessibilityCheckingConfiguration.ConfigureWcag22aa(axeBuilder)
-                        .DisableRules("color-contrast", "link-name");
+                    AccessibilityCheckingConfiguration.ConfigureWcag22aa(axeBuilder);
+
+                //configuration.AccessibilityCheckingConfiguration.AxeBuilderConfigurator += axeBuilder =>
+                //    AccessibilityCheckingConfiguration.ConfigureWcag22aa(axeBuilder)
+                //        .DisableRules("color-contrast", "link-name");
             });
 }
