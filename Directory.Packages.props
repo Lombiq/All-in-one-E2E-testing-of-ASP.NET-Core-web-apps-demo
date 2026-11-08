@@ -9,6 +9,7 @@
     <PackageVersion Include="Lombiq.HelpfulLibraries.OrchardCore" Version="13.1.0" />
     <PackageVersion Include="Lombiq.Tests" Version="6.0.1" />
     <PackageVersion Include="Lombiq.Tests.UI" Version="$(LombiqTestsUIVersion)" />
+    <PackageVersion Include="Lombiq.Tests.UI.AppExtensions" Version="$(LombiqTestsUIVersion)" />
     <PackageVersion Include="Lombiq.Tests.UI.Shortcuts" Version="$(LombiqTestsUIVersion)" />
     <PackageVersion Include="Microsoft.Testing.Extensions.GitHubActionsReport" Version="2.5.2" />
     <PackageVersion Include="Microsoft.Testing.Extensions.HangDump" Version="2.5.2" />

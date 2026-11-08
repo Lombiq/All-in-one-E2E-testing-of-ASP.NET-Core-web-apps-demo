@@ -1,18 +1,11 @@
 using Lombiq.Tests.UI.Extensions;
 using OpenQA.Selenium;
 using Shouldly;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace E2ETestingDemo.Tests.UI.Tests;
 
-public class ContentPublishingTests : UITestBase
+public class ContentPublishingTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public ContentPublishingTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task PublishedArticleShouldBeVisibleToVisitors() =>
         ExecuteTestAfterSetupAsync(

@@ -2,7 +2,6 @@ using Lombiq.HelpfulLibraries.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using OrchardCore.ContentManagement.Records;
-using System.Threading.Tasks;
 using YesSql;
 
 namespace E2ETestingDemo.TestingModule.Controllers;

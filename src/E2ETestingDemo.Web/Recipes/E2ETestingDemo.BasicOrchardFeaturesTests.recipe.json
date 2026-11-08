@@ -1,0 +1,40 @@
+{
+  "name": "E2ETestingDemo.BasicOrchardFeaturesTests",
+  "displayName": "TEST: Basic Orchard Features",
+  "description": "Setup recipe for automated UI test execution, checking the basic Orchard features.",
+  "author": "Lombiq Technologies",
+  "website": "https://github.com/Lombiq/All-in-one-E2E-testing-of-ASP.NET-Core-web-apps-demo",
+  "version": "1.0",
+  "issetuprecipe": true,
+  "categories": [
+    "test"
+  ],
+  "tags": [
+    "test"
+  ],
+  "steps": [
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "E2ETestingDemo.Web",
+          "name": "E2ETestingDemo.Tests"
+        }
+      ]
+    },
+    {
+      "name": "feature",
+      "enable": [
+        "OrchardCore.Users.Registration"
+      ]
+    },
+    {
+      "name": "settings",
+      "RegistrationSettings": {
+        "UsersCanRegister": 1,
+        "UsersMustValidateEmail": false,
+        "UsersAreModerated": false
+      }
+    }
+  ]
+}

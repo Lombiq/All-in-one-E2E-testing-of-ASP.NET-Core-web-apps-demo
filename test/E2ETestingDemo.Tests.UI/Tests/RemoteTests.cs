@@ -2,27 +2,19 @@ using Lombiq.Tests.UI;
 using Lombiq.Tests.UI.Extensions;
 using OpenQA.Selenium;
 using Shouldly;
-using System;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace E2ETestingDemo.Tests.UI.Tests;
 
-public class RemoteTests : RemoteUITestBase
+public class RemoteTests(ITestOutputHelper testOutputHelper) : RemoteUITestBase(testOutputHelper)
 {
-    public RemoteTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
-    public Task SeleniumWebFormShouldWork() =>
+    public Task OrchardCoreWebsiteShouldWork() =>
         ExecuteTestAsync(
-            new Uri("https://www.selenium.dev/selenium/web/web-form.html"),
+            new Uri("https://orchardcore.net/"),
             context =>
             {
-                context.Get(By.CssSelector("h1")).Text.ShouldBe("Web form");
-                context.Exists(By.LinkText("Return to index"));
+                context.Get(By.CssSelector("h1")).Text.ShouldBe("The open-source .NET CMS and application framework.");
+                context.Exists(By.LinkText("Try the live demo"));
             },
             configuration => configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
 }

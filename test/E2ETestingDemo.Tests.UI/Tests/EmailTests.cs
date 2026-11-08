@@ -1,17 +1,10 @@
 using Lombiq.Tests.UI.Extensions;
 using OpenQA.Selenium;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace E2ETestingDemo.Tests.UI.Tests;
 
-public class EmailTests : UITestBase
+public class EmailTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public EmailTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task SendingTestEmailShouldWork() =>
         ExecuteTestAfterSetupAsync(

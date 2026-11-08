@@ -3,18 +3,11 @@ using Lombiq.Tests.UI.Constants;
 using Lombiq.Tests.UI.Extensions;
 using OpenQA.Selenium;
 using Shouldly;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace E2ETestingDemo.Tests.UI.Tests;
 
-public class BasicTests : UITestBase
+public class BasicTests(ITestOutputHelper testOutputHelper) : UITestBase(testOutputHelper)
 {
-    public BasicTests(ITestOutputHelper testOutputHelper)
-        : base(testOutputHelper)
-    {
-    }
-
     [Fact]
     public Task AnonymousHomePageShouldExist() =>
         ExecuteTestAfterSetupAsync(
