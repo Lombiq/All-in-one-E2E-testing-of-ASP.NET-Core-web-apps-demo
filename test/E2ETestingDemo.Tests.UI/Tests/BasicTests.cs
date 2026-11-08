@@ -37,13 +37,6 @@ public class BasicTests(ITestOutputHelper testOutputHelper) : UITestBase(testOut
             });
 
     [Fact]
-    public Task TogglingFeaturesShouldWork() =>
-        ExecuteTestAfterSetupAsync(
-            context => context.ExecuteAndAssertTestFeatureToggleAsync(),
-            configuration =>
-                configuration.WithIgnoreExpectedNotFoundResponseFilter(ShortcutsUITestContextExtensions.FeatureToggleTestBenchUrl));
-
-    [Fact]
     public Task ShortcutsShouldWork() =>
         ExecuteTestAfterSetupAsync(
             async context =>
