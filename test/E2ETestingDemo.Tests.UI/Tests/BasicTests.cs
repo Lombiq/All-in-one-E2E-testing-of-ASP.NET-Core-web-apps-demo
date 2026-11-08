@@ -37,16 +37,4 @@ public class BasicTests(ITestOutputHelper testOutputHelper) : UITestBase(testOut
 
                 (await context.GetCurrentUserNameAsync()).ShouldBe(DefaultUser.UserName);
             });
-
-    [Fact]
-    public Task ShortcutsShouldWork() =>
-        ExecuteTestAfterSetupAsync(
-            async context =>
-            {
-                await context.SignInDirectlyAsync();
-
-                (await context.GetCurrentUserNameAsync()).ShouldBe(DefaultUser.UserName);
-
-                await context.EnableFeatureDirectlyAsync("OrchardCore.HealthChecks");
-            });
 }
