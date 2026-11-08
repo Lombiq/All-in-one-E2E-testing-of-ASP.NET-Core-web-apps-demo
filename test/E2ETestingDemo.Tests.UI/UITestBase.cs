@@ -29,6 +29,14 @@ public abstract class UITestBase(ITestOutputHelper testOutputHelper) : OrchardCo
                 configuration.BrowserConfiguration.Headless =
                     TestConfigurationManager.GetBoolConfiguration("BrowserConfiguration:Headless", defaultValue: false);
 
+                // Slowing down visible browser runs so the audience can follow the steps.
+                if (!configuration.BrowserConfiguration.Headless)
+                {
+                    var stepDelay = TimeSpan.FromSeconds(1);
+                    configuration.Events.AfterNavigation += (_, _) => Task.Delay(stepDelay);
+                    configuration.Events.BeforeClick += (_, _) => Task.Delay(stepDelay);
+                }
+
                 if (changeConfigurationAsync != null) await changeConfigurationAsync(configuration);
             });
 }
