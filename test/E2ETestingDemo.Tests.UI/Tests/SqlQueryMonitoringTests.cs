@@ -22,6 +22,6 @@ public class SqlQueryMonitoringTests(ITestOutputHelper testOutputHelper) : UITes
             {
                 configuration.SqlQueryMonitoringConfiguration.EnableSqlQueryMonitoringCollection = true;
                 // This makes the test fail.
-                //configuration.SqlQueryMonitoringConfiguration.DuplicateCommandThreshold = 1;
+                configuration.SqlQueryMonitoringConfiguration.DuplicateCommandThreshold = 1;
             });
 }
