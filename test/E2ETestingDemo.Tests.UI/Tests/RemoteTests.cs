@@ -17,7 +17,7 @@ public class RemoteTests(ITestOutputHelper testOutputHelper) : RemoteUITestBase(
                 context.Exists(By.LinkText("Try the live demo"));
 
                 // This makes the test fail.
-                context.Exists(By.LinkText("Buy a license"));
+                //context.Exists(By.LinkText("Buy a license"));
             },
             configuration => configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
 }

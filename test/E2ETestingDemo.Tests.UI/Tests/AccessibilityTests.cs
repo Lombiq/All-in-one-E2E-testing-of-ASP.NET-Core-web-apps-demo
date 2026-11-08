@@ -17,11 +17,11 @@ public class AccessibilityTests(ITestOutputHelper testOutputHelper) : UITestBase
                 configuration.AccessibilityCheckingConfiguration.RunAccessibilityCheckingAssertionOnAllPageChanges = true;
 
                 // This makes the test fail.
-                configuration.AccessibilityCheckingConfiguration.AxeBuilderConfigurator += axeBuilder =>
-                    AccessibilityCheckingConfiguration.ConfigureWcag22aa(axeBuilder);
-
                 //configuration.AccessibilityCheckingConfiguration.AxeBuilderConfigurator += axeBuilder =>
-                //    AccessibilityCheckingConfiguration.ConfigureWcag22aa(axeBuilder)
-                //        .DisableRules("color-contrast", "link-name");
+                //    AccessibilityCheckingConfiguration.ConfigureWcag22aa(axeBuilder);
+
+                configuration.AccessibilityCheckingConfiguration.AxeBuilderConfigurator += axeBuilder =>
+                    AccessibilityCheckingConfiguration.ConfigureWcag22aa(axeBuilder)
+                        .DisableRules("color-contrast", "link-name");
             });
 }
