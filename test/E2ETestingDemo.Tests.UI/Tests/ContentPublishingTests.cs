@@ -17,6 +17,10 @@ public class ContentPublishingTests(ITestOutputHelper testOutputHelper) : UITest
 
                 await context.CreateNewContentItemAsync("Article");
                 await context.FillContentItemTitleAsync(title);
+
+                // This makes the test fail.
+                await context.ClickAndFillInWithRetriesAsync(By.Id("AutoroutePart_Path"), "hello-dotnet-conf");
+
                 await context.ClickPublishAsync();
                 context.ShouldBeSuccess();
 

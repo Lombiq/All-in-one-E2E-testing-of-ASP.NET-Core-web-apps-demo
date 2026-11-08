@@ -21,6 +21,9 @@ public class EmailTests(ITestOutputHelper testOutputHelper) : UITestBase(testOut
                 await context.ClickReliablyOnSmtpInboxRowAndSwitchToFrame0WithRetriesAsync("Test message");
 
                 context.Exists(By.XPath("//pre[contains(.,'Hi, this is a test.')]"));
+
+                // This makes the test fail.
+                context.Exists(By.XPath("//pre[contains(.,'Unsubscribe')]"));
             },
             configuration => configuration.UseSmtpService = true);
 }

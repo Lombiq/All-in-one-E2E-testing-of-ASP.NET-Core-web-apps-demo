@@ -15,6 +15,9 @@ public class RemoteTests(ITestOutputHelper testOutputHelper) : RemoteUITestBase(
             {
                 context.Get(By.CssSelector("h1")).Text.ShouldBe("The open-source .NET CMS and application framework.");
                 context.Exists(By.LinkText("Try the live demo"));
+
+                // This makes the test fail.
+                context.Exists(By.LinkText("Buy a license"));
             },
             configuration => configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
 }

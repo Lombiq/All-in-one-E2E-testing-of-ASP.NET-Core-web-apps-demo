@@ -8,7 +8,15 @@ public class AccessibilityTests(ITestOutputHelper testOutputHelper) : UITestBase
     [Fact]
     public Task FrontendPagesShouldBeAccessible() =>
         ExecuteTestAfterSetupAsync(
-            context => context.GoToRelativeUrlAsync("/categories/travel"),
+            async context =>
+            {
+                await context.GoToRelativeUrlAsync("/categories/travel");
+
+                // This makes the test fail.
+                context.ExecuteScript("document.documentElement.removeAttribute('lang');");
+
+                context.AssertAccessibility();
+            },
             configuration =>
             {
                 configuration.AccessibilityCheckingConfiguration.RunAccessibilityCheckingAssertionOnAllPageChanges = true;

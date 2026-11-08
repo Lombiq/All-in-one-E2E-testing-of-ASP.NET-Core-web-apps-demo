@@ -13,6 +13,11 @@ public class BasicTests(ITestOutputHelper testOutputHelper) : UITestBase(testOut
         ExecuteTestAfterSetupAsync(
             async context =>
             {
+                // This makes the test fail.
+                await context.SignInDirectlyAsync();
+
+                await context.GoToHomePageAsync(onlyIfNotAlreadyThere: false);
+
                 context
                     .Get(By.ClassName("navbar-brand"))
                     .Text
@@ -31,6 +36,9 @@ public class BasicTests(ITestOutputHelper testOutputHelper) : UITestBase(testOut
                 await context.FillInWithRetriesAsync(By.Id("LoginForm_UserName"), DefaultUser.UserName);
                 await context.FillInWithRetriesAsync(By.Id("LoginForm_Password"), DefaultUser.Password);
 
+                // This makes the test fail.
+                context.ExecuteScript("console.error('Something went wrong on the login page.');");
+
                 await context.ClickReliablyOnSubmitAsync();
 
                 (await context.GetCurrentUserNameAsync()).ShouldBe(DefaultUser.UserName);
@@ -46,5 +54,8 @@ public class BasicTests(ITestOutputHelper testOutputHelper) : UITestBase(testOut
                 (await context.GetCurrentUserNameAsync()).ShouldBe(DefaultUser.UserName);
 
                 await context.EnableFeatureDirectlyAsync("OrchardCore.HealthChecks");
+
+                // This makes the test fail.
+                await context.GoToRelativeUrlAsync("/Lombiq.Tests.UI.Shortcuts/Error/Index");
             });
 }
