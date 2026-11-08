@@ -52,11 +52,6 @@ public class BasicTests(ITestOutputHelper testOutputHelper) : UITestBase(testOut
 
                 (await context.GetCurrentUserNameAsync()).ShouldBe(DefaultUser.UserName);
 
-                await context.ExecuteRecipeDirectlyAsync("E2ETestingDemo.Sample");
-
-                var info = await context.GetApplicationInfoAsync();
-                _testOutputHelper.WriteLineTimestampedAndDebug("App root: " + info.AppRoot);
-
                 await context.EnableFeatureDirectlyAsync("OrchardCore.HealthChecks");
             });
 }
