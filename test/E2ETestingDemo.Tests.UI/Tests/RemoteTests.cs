@@ -19,7 +19,7 @@ public class RemoteTests(ITestOutputHelper testOutputHelper) : RemoteUITestBase(
                 await context.ClickReliablyOnByLinkTextAsync("Overview");
 
                 // Just for the demo.
-                await Task.Delay(3000);
+                await Task.Delay(5000);
             },
             configuration => configuration.HtmlValidationConfiguration.RunHtmlValidationAssertionOnAllPageChanges = false);
 }
